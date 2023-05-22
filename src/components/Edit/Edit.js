@@ -35,7 +35,6 @@ const handleSubmit= async (e)=>{
   e.preventDefault();
 try{
 const res = await axios.put(`https://suppler-tracker-v1.onrender.com/api/vendor/updateVendor/${id}`,formData)
-console.log(res);
 alert(res.data.message);
 navigate('/home')
 }catch(error){

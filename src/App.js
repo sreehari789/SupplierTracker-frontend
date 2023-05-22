@@ -8,10 +8,10 @@ import Edit from './components/Edit/Edit';
 function App() {
   return (
    <Routes>
-<Route path='/Home' element={<Home/>}></Route>
+<Route path='/home' element={<Home/>}></Route>
 <Route path='/' element={<Login/>}></Route>
-<Route path='/Register' element={<Register/>}></Route>
-<Route path='/Edit/:id' element={<Edit/>}></Route>
+<Route path='/register' element={<Register/>}></Route>
+<Route path='/edit/:id' element={<Edit/>}></Route>
    </Routes>
   );
 }
