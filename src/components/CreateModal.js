@@ -3,12 +3,14 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 function Create() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const navigate= useNavigate()
 
     const [vendorName,setVendorName]=useState('')
     const [bankAccountNo,setBankAccountNo]=useState('')
@@ -33,7 +35,7 @@ try{
   const id=localStorage.getItem('uId')
 const res= await axios.post(`https://suppler-tracker-v1.onrender.com/api/vendor/postVendor/${id}`,body)
 alert(res.data.message);
-window.location.reload()
+navigate('/home')
 }
 catch(error){
 console.log(error);
